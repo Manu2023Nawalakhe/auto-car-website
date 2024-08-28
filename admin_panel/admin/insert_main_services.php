@@ -7,9 +7,11 @@ if (isset($_POST['submit'])) {
     $unique_id = rand(1000, 9999) . date('ymdHis');
 
     // Sanitize and format the inputs
-    $services_name = mysqli_real_escape_string($conn, trim($_POST['services_name']));
-    $services_heading = mysqli_real_escape_string($conn, trim($_POST['service_heading']));
-    $services_desc = mysqli_real_escape_string($conn, trim($_POST['services_desc']));
+    $service_name = mysqli_real_escape_string($conn, trim($_POST['service_name']));
+    $service_heading = mysqli_real_escape_string($conn, trim($_POST['service_heading']));
+    $service_description = mysqli_real_escape_string($conn, trim($_POST['service_description']));
+
+    $keyword = $service_name . '' . $service_description;
     $service_image = $_FILES['service_image'];
 
     // Initialize image variable
@@ -35,8 +37,8 @@ if (isset($_POST['submit'])) {
     $entry_date = date("Y-m-d");
 
     // Prepare the SQL query
-    $stmt = $conn->prepare("INSERT INTO `tbl_services` (`unique_id`, `services_name`, `service_image`, `services_heading`, `services_desc`, `entry_date`, `is_del`) VALUES (?, ?, ?, ?, ?, ?, 'approved')");
-    $stmt->bind_param("ssssss", $unique_id, $services_name, $image, $services_heading, $services_desc, $entry_date);
+    $stmt = $conn->prepare("INSERT INTO `tbl_services` (`unique_id`, `service_name`, `service_image`, `service_heading`, `service_description`, `entry_date`, `is_del`) VALUES (?, ?, ?, ?, ?, ?, 'approved')");
+    $stmt->bind_param("ssssss", $unique_id, $service_name, $image, $service_heading, $service_description, $entry_date);
 
     // Execute the query and check the result
     if ($stmt->execute()) {

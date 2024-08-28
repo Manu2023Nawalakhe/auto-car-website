@@ -1,20 +1,24 @@
-<?php include "common_function.php";
-include "db_connection.php"; ?>
+<?php
+include "common_function.php";
+include "db_connection.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<?php meta_tag();
-	css_tag(); ?>
+	<?php
+	meta_tag();
+	css_tag();
+	?>
 </head>
 
 <body>
 
-	<?php navbar_tag() ?>
+	<?php navbar_tag(); ?>
 	<!-- END nav -->
 
-	<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+	<section class="hero-wrap hero-wrap-2 " style="background-image:url(images/Carwasher.png); height: 250px;" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -26,43 +30,39 @@ include "db_connection.php"; ?>
 		</div>
 	</section>
 
-
 	<section class="ftco-section bg-light">
 		<div class="container">
 			<div class="row">
 				<?php
-				$count = 1;
 				$fetch_car = mysqli_query($conn, "SELECT * FROM `tbl_car` WHERE `is_del`='approved'");
 
-				if ($fetch_car) {
+				if ($fetch_car && mysqli_num_rows($fetch_car) > 0) {
 					while ($car = $fetch_car->fetch_object()) {
 						$unique_id = htmlspecialchars($car->unique_id);
 						$car_company = htmlspecialchars($car->car_company);
 						$car_image = htmlspecialchars($car->car_image);
 						$car_name = htmlspecialchars($car->car_name);
-						$car_price = htmlspecialchars($car->car_price);
+						$car_description = htmlspecialchars($car->car_description);
 				?>
 						<div class="col-md-4">
 							<div class="car-wrap rounded ftco-animate">
-								<!-- <div> -->
-								<img src="./admin_panel/admin/car_image/<?php echo htmlspecialchars($car_image) ?>" alt="Image" class="img rounded d-flex align-items-end">
-								<!-- </div> -->
+								<img src="./admin_panel/admin/car_image/<?php echo $car_image; ?>" alt="Image" class="img rounded d-flex align-items-end">
 								<div class="text">
-									<h2 class="mb-0"><?php echo htmlspecialchars($car_company); ?></h2>
+									<h2 class="mb-0"><?php echo $car_company; ?></h2>
 									<div class="d-flex mb-3">
-										<span class="cat"><?php echo htmlspecialchars($car_name); ?></span>
-										<p class="price ml-auto"><?php echo htmlspecialchars($car_price); ?> <span>Rupees</span></p>
+										<span class="cat" style="color:#056771;"><?php echo $car_name; ?></span>
 									</div>
-									<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a></p>
+									<p class="d-flex mb-0 d-block">
+										<a href="https://wa.me/917558311192" class="btn btn-primary py-2 mr-1">Book now</a>
+										<a href="car-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="btn btn-secondary py-2 ml-1">Details</a>
+									</p>
 								</div>
 							</div>
-
 						</div>
 				<?php
-						$count++;
 					}
 				} else {
-					echo '<tr><td colspan="6">No Car found.</td></tr>';
+					echo '<p>No cars found.</p>';
 				}
 				?>
 			</div>
@@ -88,7 +88,9 @@ include "db_connection.php"; ?>
 	<?php
 	footer_tag();
 	loader();
-	java_script(); ?>
+	java_script();
+	?>
+
 </body>
 
 </html>

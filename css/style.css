@@ -4419,7 +4419,6 @@ input[type="button"].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  
 }
 .nav-link:hover,
 .nav-link:focus {
@@ -11681,7 +11680,7 @@ h5,
   right: 0;
   bottom: 0;
   content: "";
-  background: #01d28e;
+  background: white;
   z-index: -2;
   width: 63%;
 }

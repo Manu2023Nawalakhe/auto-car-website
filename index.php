@@ -1,119 +1,42 @@
 <?php
 include "db_connection.php";
-include "common_function.php"; ?>
+include "common_function.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <?php meta_tag();
-  css_tag(); ?>
+  <?php meta_tag(); ?>
+  <?php css_tag(); ?>
   <link rel="stylesheet" type="text/css" href="engine1/style.css" />
   <script type="text/javascript" src="engine1/jquery.js"></script>
 </head>
 
 <body>
 
-  <?php navbar_tag() ?>
+  <?php navbar_tag(); ?>
 
-  <div class="hero-wrap ftco-degree-bg">
-    <div id="wowslider-container1">
-      <div class="ws_images">
-        <ul>
-          <li><img src="./images/bg_3.jpg" alt="bg_3" title="bg_3" id="wows1_0" /></li>
-          <li><a href="http://wowslider.net"><img src="./images/bg_1.jpg" alt="wow slider" title="car-1" id="wows1_1" /></a></li>
-          <li><img src="./images/bg_2.jpg" alt="bg_2" title="bg_2" id="wows1_2" /></li>
-        </ul>
-      </div>
-      <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">css slider</a> by WOWSlider.com v9.0</div>
-      <div class="ws_shadow"></div>
+  <div id="wowslider-container1">
+    <div class="ws_images">
+      <ul class="list-unstyled d-flex m-0 p-0">
+        <li><img src="./images/Compressor.png" alt="Compressor" title="Compressor" id="wows1_0" /></li>
+        <li><a href="http://wowslider.net"><img src="./images/Carcoat.png" alt="Car Coat" title="Car Coat" id="wows1_1" /></a></li>
+        <li><img src="./images/Carwork.png" alt="Car Work" title="Car Work" id="wows1_2" /></li>
+      </ul>
     </div>
+    <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">css slider</a> by WOWSlider.com v9.0</div>
+    <div class="ws_shadow"></div>
   </div>
 
   <script type="text/javascript" src="engine1/wowslider.js"></script>
   <script type="text/javascript" src="engine1/script.js"></script>
 
-
-
-
-  <!-- <section class="ftco-section ftco-no-pt bg-light">
-    <div class="container">
-      <div class="row no-gutters">
-        <div class="col-md-12	featured-top">
-          <div class="row no-gutters">
-            <div class="col-md-4 d-flex align-items-center">
-              <form action="#" class="request-form ftco-animate bg-primary">
-                <h2>Make your trip</h2>
-                <div class="form-group">
-                  <label for="" class="label">Pick-up location</label>
-                  <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
-                </div>
-                <div class="form-group">
-                  <label for="" class="label">Drop-off location</label>
-                  <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
-                </div>
-                <div class="d-flex">
-                  <div class="form-group mr-2">
-                    <label for="" class="label">Pick-up date</label>
-                    <input type="text" class="form-control" id="book_pick_date" placeholder="Date">
-                  </div>
-                  <div class="form-group ml-2">
-                    <label for="" class="label">Drop-off date</label>
-                    <input type="text" class="form-control" id="book_off_date" placeholder="Date">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="" class="label">Pick-up time</label>
-                  <input type="text" class="form-control" id="time_pick" placeholder="Time">
-                </div>
-                <div class="form-group">
-                  <input type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
-                </div>
-              </form>
-            </div>
-            <div class="col-md-8 d-flex align-items-center">
-              <div class="services-wrap rounded-right w-100">
-                <h3 class="heading-section mb-4">Better Way to Rent Your Perfect Cars</h3>
-                <div class="row d-flex mb-4">
-                  <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-                    <div class="services w-100 text-center">
-                      <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-route"></span></div>
-                      <div class="text w-100">
-                        <h3 class="heading mb-2">Choose Your Pickup Location</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-                    <div class="services w-100 text-center">
-                      <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-handshake"></span></div>
-                      <div class="text w-100">
-                        <h3 class="heading mb-2">Select the Best Deal</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-                    <div class="services w-100 text-center">
-                      <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-rent"></span></div>
-                      <div class="text w-100">
-                        <h3 class="heading mb-2">Reserve Your Rental Car</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p><a href="#" class="btn btn-primary py-3 px-4">Reserve Your Perfect Car</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </section> -->
-
-
-  <section class="ftco-section ftco-no-pt bg-light">
+  <section class="ftco-section ftco-no-pt bg-light my-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-          <span class="subheading">What we offer</span>
+          <span class="subheading" style="color:#c80207;">What we offer</span>
           <h2 class="mb-2">Our Services</h2>
         </div>
       </div>
@@ -121,20 +44,24 @@ include "common_function.php"; ?>
       <div class="row">
         <div class="col-md-12">
           <div class="carousel-car owl-carousel">
-            <?php $fetch_user = mysqli_query($conn, "SELECT * FROM `tbl_services` WHERE `is_del`='approved'");
+            <?php
+            $fetch_user = mysqli_query($conn, "SELECT * FROM `tbl_services` WHERE `is_del`='approved'");
             while ($fcs = $fetch_user->fetch_object()) {
               $unique_id = $fcs->unique_id;
-              $services_name = $fcs->services_name;
-              $services_image = $fcs->service_image;
+              $service_name = $fcs->service_name;
+              $service_image = $fcs->service_image;
             ?>
               <div class="item">
-                <div class="car-wrap rounded ftco-animate">
-                  <div class="img rounded d-flex align-items-end"><img src="./admin_panel/admin//servicesImage/<?php echo htmlspecialchars($services_image) ?>" alt="Image">
+                <a href="services-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" style="text-decoration: none;">
+                  <div class="car-wrap rounded ftco-animate">
+                    <div class="img rounded d-flex align-items-end">
+                      <img src="./admin_panel/admin/servicesImage/<?php echo htmlspecialchars($service_image); ?>" alt="Service Image">
+                    </div>
+                    <div class="text">
+                      <h2 class="mb-0"><?php echo htmlspecialchars($service_name); ?></h2>
+                    </div>
                   </div>
-                  <div class="text">
-                    <h2 class="mb-0"><?php echo htmlspecialchars($services_name) ?></h2>
-                  </div>
-                </div>
+                </a>
               </div>
             <?php } ?>
           </div>
@@ -143,153 +70,25 @@ include "common_function.php"; ?>
     </div>
   </section>
 
-  <section class="ftco-section ftco-about">
+  <section class="custom-block-3 page-section-ptb bg-10">
     <div class="container">
-      <div class="row no-gutters">
-        <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg);">
-        </div>
-        <div class="col-md-6 wrap-about ftco-animate">
-          <div class="heading-section heading-section-white pl-md-5">
-            <span class="subheading">About us</span>
-            <h2 class="mb-4">Welcome to Carbook</h2>
-
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            <p><a href="#" class="btn btn-primary py-3 px-4">Search Vehicle</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- <section class="ftco-section">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <span class="subheading">Services</span>
-          <h2 class="mb-3">Our Latest Services</h2>
-        </div>
-      </div>
       <div class="row">
-        <div class="col-md-3">
-          <div class="services services-2 w-100 text-center">
-            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-wedding-car"></span></div>
-            <div class="text w-100">
-              <h3 class="heading mb-2">Wedding Ceremony</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-            </div>
-          </div>
+        <!-- Left Column: Image -->
+        <div class="col-lg-4 col-md-12">
+          <img src="images/about_us.jpg" alt="RS Auto Craft" class="img-fluid rounded">
         </div>
-        <div class="col-md-3">
-          <div class="services services-2 w-100 text-center">
-            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-transportation"></span></div>
-            <div class="text w-100">
-              <h3 class="heading mb-2">City Transfer</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="services services-2 w-100 text-center">
-            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-car"></span></div>
-            <div class="text w-100">
-              <h3 class="heading mb-2">Airport Transfer</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="services services-2 w-100 text-center">
-            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-transportation"></span></div>
-            <div class="text w-100">
-              <h3 class="heading mb-2">Whole City Tour</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
-  <section class="ftco-section ftco-intro" style="background-image: url(images/bg_3.jpg);">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row justify-content-end">
-        <div class="col-md-6 heading-section heading-section-white ftco-animate">
-          <h2 class="mb-3">Do You Want To Earn With Us? So Don't Be Late.</h2>
-          <a href="#" class="btn btn-primary btn-lg">Become A Driver</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="ftco-section testimony-section bg-light">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <span class="subheading">Testimonial</span>
-          <h2 class="mb-3">Happy Clients</h2>
-        </div>
-      </div>
-      <div class="row ftco-animate">
-        <div class="col-md-12">
-          <div class="carousel-testimony owl-carousel ftco-owl">
-            <div class="item">
-              <div class="testimony-wrap rounded text-center py-4 pb-5">
-                <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)">
-                </div>
-                <div class="text pt-4">
-                  <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Roger Scott</p>
-                  <span class="position">Marketing Manager</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap rounded text-center py-4 pb-5">
-                <div class="user-img mb-2" style="background-image: url(images/person_2.jpg)">
-                </div>
-                <div class="text pt-4">
-                  <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Roger Scott</p>
-                  <span class="position">Interface Designer</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap rounded text-center py-4 pb-5">
-                <div class="user-img mb-2" style="background-image: url(images/person_3.jpg)">
-                </div>
-                <div class="text pt-4">
-                  <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Roger Scott</p>
-                  <span class="position">UI Designer</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap rounded text-center py-4 pb-5">
-                <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)">
-                </div>
-                <div class="text pt-4">
-                  <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Roger Scott</p>
-                  <span class="position">Web Developer</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap rounded text-center py-4 pb-5">
-                <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)">
-                </div>
-                <div class="text pt-4">
-                  <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Roger Scott</p>
-                  <span class="position">System Analyst</span>
-                </div>
-              </div>
-            </div>
+        <!-- Right Column: Text Content -->
+        <div class="col-lg-8 col-md-12">
+          <div class="title">
+            <h3 style="color:#c80207;">RS Auto Craft</h3>
+          </div>
+          <div class="content">
+            <h4 class="text-dark">Welcome to RS Auto Craft</h4>
+            <p style="color:black;font-weight:600">
+              RS Auto Craft is your trusted car care center, offering a comprehensive range of services to keep your vehicle in top condition. Specializing in car denting, painting, and polishing, we ensure your car looks as good as new. Our detailing and ceramic coating services provide long-lasting protection and shine. At RS Auto Craft, we also offer expert mechanical and electrical repairs, ensuring every aspect of your vehicle is functioning perfectly.<br>
+              Equipped with state-of-the-art workshop machinery, including painting booths, polish rooms, and advanced tools like dent pullers and compressors, we deliver precision and quality in every job. Whether it’s a mechanical lift, welding, or car washing, our skilled technicians are dedicated to providing the best care for your car. Trust RS Auto Craft for all your automotive needs, where craftsmanship meets excellence.
+            </p>
           </div>
         </div>
       </div>
@@ -300,96 +99,39 @@ include "common_function.php"; ?>
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-md-7 heading-section text-center ftco-animate">
-          <span class="subheading">Blog</span>
+          <span class="subheading" style="color:#c80207;">Blog</span>
           <h2>Recent Blog</h2>
         </div>
       </div>
-      <div class="row d-flex">
-        <div class="col-md-4 d-flex ftco-animate">
-          <div class="blog-entry justify-content-end">
-            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-            </a>
-            <div class="text pt-4">
-              <div class="meta mb-3">
-                <div><a href="#">Oct. 29, 2019</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              <p><a href="#" class="btn btn-primary">Read more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 d-flex ftco-animate">
-          <div class="blog-entry justify-content-end">
-            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-            </a>
-            <div class="text pt-4">
-              <div class="meta mb-3">
-                <div><a href="#">Oct. 29, 2019</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              <p><a href="#" class="btn btn-primary">Read more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 d-flex ftco-animate">
-          <div class="blog-entry">
-            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-            </a>
-            <div class="text pt-4">
-              <div class="meta mb-3">
-                <div><a href="#">Oct. 29, 2019</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              <p><a href="#" class="btn btn-primary">Read more</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="ftco-counter ftco-section img bg-light" id="section-counter">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-          <div class="block-18">
-            <div class="text text-border d-flex align-items-center">
-              <strong class="number" data-number="60">0</strong>
-              <span>Year <br>Experienced</span>
+      <div class="row d-flex">
+        <?php
+        $neps = mysqli_query($conn, "SELECT * FROM `tbl_blogs` WHERE `is_del`='approved'");
+        while ($ns = $neps->fetch_object()) {
+          $unique_id = $ns->unique_id;
+          $blog_title = $ns->blog_title;
+          $blog_description = $ns->blog_description;
+          $blog_image = $ns->blog_image;
+        ?>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="block-20">
+                <img src="admin_panel/admin/blogs_image/<?php echo htmlspecialchars($blog_image); ?>" class="block-20" alt="Blog Image">
+              </a>
+              <div class="text pt-4">
+                <div class="meta mb-3">
+                  <div>Oct. 29, 2019</div>
+                  <div>Admin</div>
+                  <div><span class="icon-chat meta-chat"></span> 3</div>
+                </div>
+                <h3 class="heading mt-2">
+                  <a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" style="color:#c80207;"><?php echo htmlspecialchars($blog_title); ?></a>
+                </h3>
+                <p><a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="btn btn-primary">Read more</a></p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-          <div class="block-18">
-            <div class="text text-border d-flex align-items-center">
-              <strong class="number" data-number="1090">0</strong>
-              <span>Total <br>Cars</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-          <div class="block-18">
-            <div class="text text-border d-flex align-items-center">
-              <strong class="number" data-number="2590">0</strong>
-              <span>Happy <br>Customers</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-          <div class="block-18">
-            <div class="text d-flex align-items-center">
-              <strong class="number" data-number="67">0</strong>
-              <span>Total <br>Branches</span>
-            </div>
-          </div>
-        </div>
+        <?php } ?>
       </div>
     </div>
   </section>
@@ -397,7 +139,9 @@ include "common_function.php"; ?>
   <?php
   footer_tag();
   loader();
-  java_script(); ?>
+  java_script();
+  ?>
+
 </body>
 
 </html>

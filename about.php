@@ -13,7 +13,7 @@ include "common_function.php";
 
   <?php navbar_tag(); ?>
 
-  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+  <section class="hero-wrap hero-wrap-2" style="background-image:url(images/Carwasher.png); height: 250px;" data-stellar-background-ratio=" 0.5">
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -25,39 +25,32 @@ include "common_function.php";
     </div>
   </section>
 
-  <section class="ftco-section ftco-about">
+  <section class="custom-block-3 page-section-ptb bg-10 my-5">
     <div class="container">
-      <div class="row no-gutters">
-        <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg);">
+      <div class="row">
+        <!-- Left Column: Image -->
+        <div class="col-lg-4 col-md-12 ">
+          <img src="images/about_us.jpg" alt="RS Auto Craft" class="img-fluid rounded">
         </div>
-        <div class="col-md-6 wrap-about ftco-animate">
-          <div class="heading-section heading-section-white pl-md-5">
-            <span class="subheading">About us</span>
-            <h2 class="mb-4">Welcome to Carbook</h2>
 
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            <p><a href="#" class="btn btn-primary py-3 px-4">Search Vehicle</a></p>
+        <!-- Right Column: Text Content -->
+        <div class="col-lg-8 col-md-12">
+          <div class="title">
+            <h3 style="color:#c80207;">RS Auto Craft</h3>
+          </div>
+          <div class="content">
+            <h4 class="text-dark">Welcome to RS Auto Craft</h4>
+            <p style="color:black;font-weight:600">
+              RS Auto Craft is your trusted car care center, offering a comprehensive range of services to keep your vehicle in top condition. Specializing in car denting, painting, and polishing, we ensure your car looks as good as new. Our detailing and ceramic coating services provide long-lasting protection and shine. At RS Auto Craft, we also offer expert mechanical and electrical repairs, ensuring every aspect of your vehicle is functioning perfectly.<br>
+              Equipped with state-of-the-art workshop machinery, including painting booths, polish rooms, and advanced tools like dent pullers and compressors, we deliver precision and quality in every job. Whether it’s a mechanical lift, welding, or car washing, our skilled technicians are dedicated to providing the best care for your car. Trust RS Auto Craft for all your automotive needs, where craftsmanship meets excellence.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="ftco-section ftco-intro" style="background-image: url(images/bg_3.jpg);">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row justify-content-end">
-        <div class="col-md-6 heading-section heading-section-white ftco-animate">
-          <h2 class="mb-3">Do You Want To Earn With Us? So Don't Be Late.</h2>
-          <a href="#" class="btn btn-primary btn-lg">Become A Driver</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="ftco-section testimony-section bg-light">
+  <!-- <section class="ftco-section testimony-section bg-light">
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-md-7 text-center heading-section ftco-animate">
@@ -167,7 +160,7 @@ include "common_function.php";
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <?php
   footer_tag();

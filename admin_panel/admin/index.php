@@ -1,23 +1,22 @@
 <?php
 session_start();
+include "../../db_connection.php";
+include "comman_function.php";
+?>
+<?php
 $admin_id = $_SESSION['admin_id'];
 if (!empty($_SESSION['admin_id'])) {
-  $admin_id = $_SESSION['admin_id'];
-  $admin_name = $_SESSION['admin_name'];
+  $user_id = $_SESSION['admin_id'];
 } else {
   session_destroy();
-  echo "<script>";
-  echo "window.location='../index.php'";
-  echo "</script>";
+?>
+  <script>
+    window.location = "../index.php"
+  </script>
+<?php
 }
-
-include "comman_function.php";
-include "../../db_connection.php";
-
-
 error_reporting(0);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +35,7 @@ error_reporting(0);
 
       <!--Start Dashboard Content-->
 
-      <div class="row mt-3" style="height:200px;">
+      <!-- <div class="row mt-3" style="height:200px;">
 
 
 
@@ -100,7 +99,7 @@ error_reporting(0);
         </div>
 
 
-      </div><!--End Row-->
+      </div>End Row -->
 
 
 

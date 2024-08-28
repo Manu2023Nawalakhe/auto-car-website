@@ -9,7 +9,9 @@ if (isset($_POST['submit'])) {
   // Sanitize and format the inputs
   $car_company = mysqli_real_escape_string($conn, trim($_POST['car_company']));
   $car_name = mysqli_real_escape_string($conn, trim($_POST['car_name']));
-  $car_price = mysqli_real_escape_string($conn, trim($_POST['car_price']));
+  $car_description = mysqli_real_escape_string($conn, trim($_POST['car_description']));
+
+  $keyword =  $car_name . '' . $car_description;
   $car_image = $_FILES['car_image'];
 
   // Initialize image variable
@@ -35,8 +37,8 @@ if (isset($_POST['submit'])) {
   $entry_date = date("Y-m-d");
 
   // Prepare the SQL query
-  $stmt = $conn->prepare("INSERT INTO `tbl_car` (`unique_id`, `car_company`, `car_image`, `car_name`, `car_price`, `entry_date`, `is_del`) VALUES (?, ?, ?, ?, ?, ?, 'approved')");
-  $stmt->bind_param("ssssss", $unique_id,  $car_company, $image, $car_name, $car_price, $entry_date);
+  $stmt = $conn->prepare("INSERT INTO `tbl_car` (`unique_id`, `car_company`, `car_image`, `car_name`, `car_description`, `entry_date`, `is_del`) VALUES (?, ?, ?, ?, ?, ?, 'approved')");
+  $stmt->bind_param("ssssss", $unique_id,  $car_company, $image, $car_name, $car_description, $entry_date);
 
   // Execute the query and check the result
   if ($stmt->execute()) {

@@ -7,17 +7,18 @@ include "common_function.php";
 <html lang="en">
 
 <head>
-  <?php 
+  <?php
   meta_tag(); // Function should define meta tags
   css_tag(); // Function should link to the CSS files
   ?>
 </head>
 
 <body>
-  <?php navbar_tag(); // Function to include the navigation bar ?>
+  <?php navbar_tag(); // Function to include the navigation bar 
+  ?>
   <!-- END nav -->
 
-  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+  <section class="hero-wrap hero-wrap-2" style="background-image:url(images/Carwasher.png); height: 250px;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -25,7 +26,7 @@ include "common_function.php";
           <p class="breadcrumbs">
             <span class="mr-2">
               <a href="index.php">Home <i class="ion-ios-arrow-forward"></i></a>
-            </span> 
+            </span>
             <span>Contact <i class="ion-ios-arrow-forward"></i></span>
           </p>
           <h1 class="mb-3 bread">Contact Us</h1>

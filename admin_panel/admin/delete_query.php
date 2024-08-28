@@ -1,18 +1,7 @@
 <?php
 
 include "../../db_connection.php";
-include "comman_function.php";
-session_start();
-$admin_id = $_SESSION['admin_id'];
-if (!empty($_SESSION['admin_id'])) {
-  $admin_id = $_SESSION['admin_id'];
-  $admin_name = $_SESSION['admin_name'];
-} else {
-  session_destroy();
-  echo "<script>";
-  echo "window.location='../index.php'";
-  echo "</script>";
-} ?>
+?>
 <?php
 $id = $_GET['id'];
 

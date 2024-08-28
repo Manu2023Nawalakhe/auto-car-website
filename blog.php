@@ -1,5 +1,6 @@
 <?php
 include "common_function.php";
+include "db_connection.php"
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@ include "common_function.php";
   <?php navbar_tag() ?>
   <!-- END nav -->
 
-  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+  <section class="hero-wrap hero-wrap-2 " style="background-image:url(images/Carwasher.png); height: 250px;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -29,119 +30,55 @@ include "common_function.php";
 
   <section class="ftco-section">
     <div class="container">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-12 text-center d-flex ftco-animate">
-          <div class="blog-entry justify-content-end mb-md-5">
-            <a href="blog-single.php" class="block-20 img" style="background-image: url('images/image_1.jpg');">
-            </a>
-            <div class="text px-md-5 pt-4">
-              <div class="meta mb-3">
-                <div><a href="#">Oct. 29, 2019</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              <p><a href="blog-single.php" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 text-center d-flex ftco-animate">
-          <div class="blog-entry justify-content-end mb-md-5">
-            <a href="blog-single.php" class="block-20 img" style="background-image: url('images/image_2.jpg');">
-            </a>
-            <div class="text px-md-5 pt-4">
-              <div class="meta mb-3">
-                <div><a href="#">Oct. 29, 2019</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              <p><a href="blog-single.html" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 text-center d-flex ftco-animate">
-          <div class="blog-entry">
-            <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_3.jpg');">
-            </a>
-            <div class="text px-md-5 pt-4">
-              <div class="meta mb-3">
-                <div><a href="#">Oct. 29, 2019</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              <p><a href="blog-single.html" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 text-center d-flex ftco-animate">
-          <div class="blog-entry justify-content-end mb-md-5">
-            <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_4.jpg');">
-            </a>
-            <div class="text px-md-5 pt-4">
-              <div class="meta mb-3">
-                <div><a href="#">Oct. 29, 2019</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              <p><a href="blog-single.html" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 text-center d-flex ftco-animate">
-          <div class="blog-entry justify-content-end mb-md-5">
-            <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_5.jpg');">
-            </a>
-            <div class="text px-md-5 pt-4">
-              <div class="meta mb-3">
-                <div><a href="#">Oct. 29, 2019</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              <p><a href="blog-single.html" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 text-center d-flex ftco-animate">
-          <div class="blog-entry">
-            <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_6.jpg');">
-            </a>
-            <div class="text px-md-5 pt-4">
-              <div class="meta mb-3">
-                <div><a href="#">Oct. 29, 2019</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-              </div>
-              <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              <p><a href="blog-single.html" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
-            </div>
-          </div>
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+          <span class="subheading" style="color:#c80207;">Blog</span>
+          <h2>Recent Blog</h2>
         </div>
       </div>
-      <div class="row mt-5">
-        <div class="col text-center">
-          <div class="block-27">
-            <ul>
-              <li><a href="#">&lt;</a></li>
-              <li class="active"><span>1</span></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">&gt;</a></li>
-            </ul>
+
+      <div class="row d-flex">
+        <?php
+
+        // Pagination Code 
+        // $recordsPerPage = 6;
+        // $page = isset($_GET['page']) ? $_GET['page'] : 1; // Get the current page or default to 1
+        // $offset = ($page - 1) * $recordsPerPage;
+
+
+        $neps = mysqli_query($conn, "SELECT * FROM `tbl_blogs` WHERE `is_del`='approved'");
+        while ($ns = $neps->fetch_object()) {
+          $unique_id = $ns->unique_id;
+          $blog_title = $ns->blog_title;
+          $blog_description = $ns->blog_description;
+          $blog_image = $ns->blog_image;
+        ?>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="blog-single.php" class="block-20">
+
+                <img src="admin_panel/admin/blogs_image/<?php echo htmlspecialchars($blog_image); ?>" class="block-20" alt="Image">
+              </a>
+              <div class="text pt-4">
+                <div class="meta mb-3">
+                  <div><a href="#">Oct. 29, 2019</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <h3 class="heading mt-2"><a href="blog-single.php?id="><?php echo htmlspecialchars($blog_title); ?></h3>
+                <p><a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="btn btn-primary">Read more</a></p>
+              </div>
+            </div>
           </div>
-        </div>
+
+
+
+
+
+        <?php } ?>
       </div>
+
+    </div>
     </div>
   </section>
 

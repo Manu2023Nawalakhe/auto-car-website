@@ -1,45 +1,12 @@
 <?php
 
 include "../../db_connection.php";
-session_start();
-$admin_id = $_SESSION['admin_id'];
-if (!empty($_SESSION['admin_id'])) {
-  $admin_id = $_SESSION['admin_id'];
-  $admin_name = $_SESSION['admin_name'];
-} else {
-  session_destroy();
-  echo "<script>";
-  echo "window.location='../index.php'";
-  echo "</script>";
-} ?>
+?>
+<?php
+$unique_id = $_GET['unique_id'];
+$ins_query = mysqli_query($conn, "UPDATE `tbl_car` SET `is_del`='deleted' where is_del='approved' and unique_id='$unique_id'");
 
-// Check if unique_id is set and sanitize it
-if (isset($_GET['unique_id'])) {
-  $unique_id = $_GET['unique_id'];
-
-  // Use prepared statements to prevent SQL injection
-  $stmt = $conn->prepare("UPDATE `tbl_car` SET `is_del`='deleted' WHERE `is_del`='approved' AND `unique_id`=?");
-  $stmt->bind_param("s", $unique_id);
-
-  if ($stmt->execute()) {
-    echo "<script>
-                alert('Deleted Successfully');
-                window.location = 'view_car.php';
-              </script>";
-  } else {
-    echo "<script>
-                alert('Deletion Failed');
-                window.location = 'view_car.php';
-              </script>";
-  }
-
-  // Close the prepared statement
-  $stmt->close();
-} else {
-  echo "<script>
-            alert('Invalid Request');
-            window.location = 'view_car.php';
-          </script>";
-}
-
-// Close
+echo "<script>";
+echo "window.location ='view_cars.php'";
+echo "</script>";
+?>

@@ -112,6 +112,8 @@ function header_tag()
 
         <li><a href="view_cus_query.php"><i class="zmdi zmdi-star-outline"></i>View Customer Query</a></li>
 
+        <li><a href="view_keyword.php"><i class="zmdi zmdi-star-outline"></i>View Keyword</a></li>
+
       </ul>
 
     </div>
