@@ -69,7 +69,7 @@ if (!$conn) {
                     <div><span class="icon-chat meta-chat"></span> 3</div>
                   </div>
                   <h3 class="heading mt-2" style="color:#c80207;"><?php echo $service_heading; ?></h3>
-                  <p style="color: black;"><?php echo $service_description; ?></p>
+                  <p style="color:black;"><?php echo html_entity_decode($service_description); ?></p>
                 </div>
               </div>
           <?php
