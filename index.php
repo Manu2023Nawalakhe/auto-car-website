@@ -58,7 +58,7 @@ include "common_function.php";
                       <img src="./admin_panel/admin/servicesImage/<?php echo htmlspecialchars($service_image); ?>" alt="Service Image">
                     </div>
                     <div class="text">
-                      <h2 class="mb-0"><?php echo htmlspecialchars($service_name); ?></h2>
+                      <h2 class="mb-0" style="color:#c80207;"><?php echo htmlspecialchars($service_name); ?></h2>
                     </div>
                   </div>
                 </a>
@@ -116,18 +116,19 @@ include "common_function.php";
           <div class="col-md-4 d-flex ftco-animate">
             <div class="blog-entry justify-content-end">
               <a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="block-20">
-                <img src="admin_panel/admin/blogs_image/<?php echo htmlspecialchars($blog_image); ?>" class="block-20" alt="Blog Image">
+                <img src="admin_panel/admin/blogs_image/<?php echo htmlspecialchars($blog_image); ?>" class="block-20" alt="Image">
               </a>
               <div class="text pt-4">
                 <div class="meta mb-3">
-                  <div>Oct. 29, 2019</div>
-                  <div>Admin</div>
-                  <div><span class="icon-chat meta-chat"></span> 3</div>
+                  <div style="color: black;">Oct. 29, 2019</div>
+                  <div style="color: black;">Admin</div>
                 </div>
                 <h3 class="heading mt-2">
-                  <a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" style="color:#c80207;"><?php echo htmlspecialchars($blog_title); ?></a>
+                  <a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" style="color:#c80207;">
+                    <?php echo htmlspecialchars($blog_title);  ?>
+                  </a>
                 </h3>
-                <p><a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="btn btn-primary">Read more</a></p>
+                <p><a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="btn btn-danger">Read more</a></p>
               </div>
             </div>
           </div>

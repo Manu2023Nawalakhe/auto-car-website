@@ -54,7 +54,7 @@ include "common_function.php";
                       <img src="./admin_panel/admin/servicesImage/<?php echo htmlspecialchars($service_image); ?>" alt="Service Image">
                     </div>
                     <div class="text">
-                      <h2 class="mb-0"><?php echo htmlspecialchars($service_name); ?></h2>
+                      <h2 class="mb-0" style="color:#c80207;"><?php echo htmlspecialchars($service_name); ?></h2>
                     </div>
                   </div>
                 </a>

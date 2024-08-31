@@ -45,9 +45,9 @@ include "db_connection.php"; ?>
 							<div class="car-details">
 								<div class="img rounded"> <img src="./admin_panel/admin/car_image/<?php echo $car_image; ?>" alt="Image" class="img rounded d-flex align-items-end"> </div>
 								<div class="text text-center">
-									<span class="subheading"><?php echo $car_name ?></span>
-									<h2> <?php echo $car_company ?></h2>
-									<p> <?php echo $car_description ?></p>
+									<span class="subheading" style="color: black;"><?php echo $car_name ?></span>
+									<h2 style="color:#c80207;"> <?php echo $car_company ?></h2>
+									<p style="color: black;"> <?php echo $car_description ?></p>
 								</div>
 							</div>
 						</div>
@@ -66,7 +66,7 @@ include "db_connection.php"; ?>
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-12 heading-section text-center ftco-animate mb-5">
-					<span class="subheading">Choose Car</span>
+					<span class="subheading" style="color:#c80207;">Choose Car</span>
 					<h2 class="mb-2">Related Cars</h2>
 				</div>
 			</div>
@@ -87,12 +87,12 @@ include "db_connection.php"; ?>
 								<img src="./admin_panel/admin/car_image/<?php echo $car_image; ?>" alt="Image" class="img rounded d-flex align-items-end">
 							</div>
 							<div class="text">
-								<h2 class="mb-0"><?php echo $car_company; ?></h2>
+								<h2 class="mb-0" style="color:#c80207;"><?php echo $car_company; ?></h2>
 								<div class="d-flex mb-3">
-									<span class="cat" style="color:#056771;"><?php echo $car_name; ?></span>
+									<span class="cat" style="color:black;"><?php echo $car_name; ?></span>
 
 								</div>
-								<p class="d-flex mb-0 d-block"><a href="https://wa.me/917558311192" class="btn btn-primary py-2 mr-1">Book now</a> <a href="car-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="btn btn-secondary py-2 ml-1">Details</a>
+								<p class="d-flex mb-0 d-block"><a href="https://wa.me/917558311192" class="btn btn-danger py-2 mr-1">Book now</a> <a href="car-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="btn btn-secondary py-2 ml-1">Details</a>
 							</div>
 						</div>
 				<?php

@@ -48,12 +48,12 @@ include "db_connection.php";
 							<div class="car-wrap rounded ftco-animate">
 								<img src="./admin_panel/admin/car_image/<?php echo $car_image; ?>" alt="Image" class="img rounded d-flex align-items-end">
 								<div class="text">
-									<h2 class="mb-0"><?php echo $car_company; ?></h2>
+									<h2 class="mb-0" style="color:#c80207;"><?php echo $car_company; ?></h2>
 									<div class="d-flex mb-3">
-										<span class="cat" style="color:#056771;"><?php echo $car_name; ?></span>
+										<span class="cat" style="color:black;"><?php echo $car_name; ?></span>
 									</div>
 									<p class="d-flex mb-0 d-block">
-										<a href="https://wa.me/917558311192" class="btn btn-primary py-2 mr-1">Book now</a>
+										<a href="https://wa.me/917558311192" class="btn btn-danger py-2 mr-1">Book now</a>
 										<a href="car-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="btn btn-secondary py-2 ml-1">Details</a>
 									</p>
 								</div>
@@ -65,22 +65,6 @@ include "db_connection.php";
 					echo '<p>No cars found.</p>';
 				}
 				?>
-			</div>
-
-			<div class="row mt-5">
-				<div class="col text-center">
-					<div class="block-27">
-						<ul>
-							<li><a href="#">&lt;</a></li>
-							<li class="active"><span>1</span></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">&gt;</a></li>
-						</ul>
-					</div>
-				</div>
 			</div>
 		</div>
 	</section>

@@ -9,6 +9,27 @@ ini_set('display_errors', 1);  // Display errors for debugging
 if (!$conn) {
   die("Database connection failed: " . mysqli_connect_error());
 }
+
+// Fetch the blog post ID from the URL if available, otherwise default to the first blog post
+$blog_id = isset($_GET['blog_id']) ? $_GET['blog_id'] : null;
+
+$query = $blog_id
+  ? "SELECT * FROM `tbl_blogs` WHERE `unique_id` = '$blog_id' AND `is_del` = 'approved' LIMIT 1"
+  : "SELECT * FROM `tbl_blogs` WHERE `is_del` = 'approved' LIMIT 1";
+
+$neps = mysqli_query($conn, $query);
+
+if ($neps && mysqli_num_rows($neps) > 0) {  // Check if query was successful and if there are any results
+  $ns = $neps->fetch_object();
+  $unique_id = $ns->unique_id;
+  $blog_title = $ns->blog_title;
+  $blog_description = $ns->blog_description;
+  $blog_image = $ns->blog_image;
+} else {
+  $blog_title = "No services found";
+  $blog_description = "";
+  $blog_image = "default.png";  // Default image in case no blog post is found
+}
 ?>
 
 <!DOCTYPE html>
@@ -33,69 +54,51 @@ if (!$conn) {
         <div class="col-md-9 ftco-animate pb-5">
           <p class="breadcrumbs">
             <span class="mr-2"><a href="index.php">Home <i class="ion-ios-arrow-forward"></i></a></span>
-            <span class="mr-2"><a href="blog.php">Blog <i class="ion-ios-arrow-forward"></i></a></span>
-            <span>Blog Single <i class="ion-ios-arrow-forward"></i></span>
+            <span class="mr-2"><a href="services.php">Services <i class="ion-ios-arrow-forward"></i></a></span>
+            <span>Service Details <i class="ion-ios-arrow-forward"></i></span>
           </p>
-          <h1 class="mb-3 bread">Read our blog</h1>
+          <h1 class="mb-3 bread">Our Service</h1>
         </div>
       </div>
     </div>
   </section>
 
-  <?php
-  // Fetch and display blog data using prepared statements
-  $bid = isset($_GET['id']) ? $_GET['id'] : '';
-
-  // Validate input to prevent SQL injection
-  if (!empty($bid)) {
-    $stmt = $conn->prepare("SELECT * FROM `tbl_blogs` WHERE `is_del`='approved' AND `unique_id`=?");
-    $stmt->bind_param("s", $bid);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-      while ($ns = $result->fetch_object()) {
-        $unique_id = htmlspecialchars($ns->unique_id);
-        $blog_title = htmlspecialchars($ns->blog_title);
-        $blog_description = htmlspecialchars($ns->blog_description);
-        $blog_image = htmlspecialchars($ns->blog_image);
-  ?>
-
-        <section class="listings-content-wrapper section-padding-100" style="margin-top:40px;">
-          <div class="container header bg-white p-0" style="margin-top:2px;">
-            <div class="row g-2 align-items-center flex-column-reverse flex-md-row">
-              <div class="col-md-12 animated fadeIn">
-                <div class="owl-carousel header-carousel">
-                  <div class="owl-carousel-item">
-                    <img src="admin_panel/admin/blogs_image/<?php echo $blog_image; ?>" class="block-20" alt="Image">
-                  </div>
-                </div>
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12 text-center d-flex ftco-animate">
+          <div class="blog-entry justify-content-end mb-md-5">
+            <img src="./admin_panel/admin/blogs_image/<?php echo $blog_image; ?>" alt="service_image" class="block-20 img">
+            <div class="text px-md-5 pt-4">
+              <div class="meta mb-3">
+                <div>Oct. 29, 2019</div>
+                <div>Admin</div>
+                <div><span class="icon-chat meta-chat"></span> 3</div>
               </div>
+              <h3 class="heading mt-2" style="color:#c80207;"><?php echo $blog_title; ?></h3>
+              <p style="color:black;"><?php echo html_entity_decode($blog_description); ?></p>
             </div>
           </div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-12 col-lg-12">
-                <div class="listings-content">
-                  <h2><?php echo $blog_title; ?></h2>
-                  <p><?php echo $blog_description; ?></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
+      </div>
 
-  <?php
-      }
-    } else {
-      echo "<p>No blogs found.</p>";
-    }
-    $stmt->close();  // Close the prepared statement
-  } else {
-    echo "<p>Invalid blog ID.</p>";
-  }
-  mysqli_close($conn);  // Close the database connection
-  ?>
+      <div class="row d-flex justify-content-center mt-5">
+        <?php
+        // Fetch all blog titles for clickable list
+        $all_blogs = mysqli_query($conn, "SELECT unique_id, blog_title FROM `tbl_blogs` WHERE `is_del` = 'approved'");
+
+        if ($all_blogs && mysqli_num_rows($all_blogs) > 0) {
+          while ($blog = mysqli_fetch_object($all_blogs)) {
+            echo '<div class="col-md-3">';
+            echo '<a href="services.php?blog_id=' . $blog->unique_id . '" class="btn btn-primary d-block mb-2">' . $blog->blog_title . '</a>';
+            echo '</div>';
+          }
+        }
+        mysqli_close($conn);  // Close the database connection
+        ?>
+      </div>
+    </div>
+  </section>
 
   <?php
   footer_tag();  // Include footer

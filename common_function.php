@@ -63,7 +63,7 @@ navbar_tag()
 <?php function
 footer_tag()
 { ?>
-  <footer class="ftco-footer ftco-bg-dark ftco-section" style="background-color: white;">
+  <footer class="ftco-footer ftco-bg-dark ftco-section" style="background-color: #171717;">
     <div class="container">
       <div class="row mb-5">
         <div class="col-md">

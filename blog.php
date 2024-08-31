@@ -1,22 +1,24 @@
 <?php
 include "common_function.php";
-include "db_connection.php"
+include "db_connection.php"; // Added missing semicolon
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <?php meta_tag();
-  css_tag(); ?>
+  <?php
+  meta_tag();
+  css_tag();
+  ?>
 </head>
 
 <body>
 
-  <?php navbar_tag() ?>
+  <?php navbar_tag(); ?> <!-- Added semicolon -->
   <!-- END nav -->
 
-  <section class="hero-wrap hero-wrap-2 " style="background-image:url(images/Carwasher.png); height: 250px;" data-stellar-background-ratio="0.5">
+  <section class="hero-wrap hero-wrap-2" style="background-image:url(images/Carwasher.png); height: 250px;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -39,13 +41,6 @@ include "db_connection.php"
 
       <div class="row d-flex">
         <?php
-
-        // Pagination Code 
-        // $recordsPerPage = 6;
-        // $page = isset($_GET['page']) ? $_GET['page'] : 1; // Get the current page or default to 1
-        // $offset = ($page - 1) * $recordsPerPage;
-
-
         $neps = mysqli_query($conn, "SELECT * FROM `tbl_blogs` WHERE `is_del`='approved'");
         while ($ns = $neps->fetch_object()) {
           $unique_id = $ns->unique_id;
@@ -55,37 +50,34 @@ include "db_connection.php"
         ?>
           <div class="col-md-4 d-flex ftco-animate">
             <div class="blog-entry justify-content-end">
-              <a href="blog-single.php" class="block-20">
-
+              <a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="block-20">
                 <img src="admin_panel/admin/blogs_image/<?php echo htmlspecialchars($blog_image); ?>" class="block-20" alt="Image">
               </a>
               <div class="text pt-4">
                 <div class="meta mb-3">
-                  <div><a href="#">Oct. 29, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  <div style="color: black;">Oct. 29, 2019</div>
+                  <div style="color: black;">Admin</div>
+
                 </div>
-                <h3 class="heading mt-2"><a href="blog-single.php?id="><?php echo htmlspecialchars($blog_title); ?></h3>
-                <p><a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="btn btn-primary">Read more</a></p>
+                <h3 class="heading mt-2">
+                  <a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" style="color:#c80207;">
+                    <?php echo htmlspecialchars($blog_title); ?>
+                  </a>
+                </h3>
+                <p><a href="blog-single.php?id=<?php echo htmlspecialchars($unique_id); ?>" class="btn btn-danger">Read more</a></p>
               </div>
             </div>
           </div>
-
-
-
-
-
         <?php } ?>
       </div>
-
-    </div>
     </div>
   </section>
 
   <?php
   footer_tag();
   loader();
-  java_script(); ?>
+  java_script();
+  ?>
 
 </body>
 
